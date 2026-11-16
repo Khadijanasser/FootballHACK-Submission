@@ -1,0 +1,72 @@
+{
+  "model_sha256": {
+    "features.py": "0f94490cdd40405634dee870ec5c7b2577b35a8a6b92df3781ff8f92194fcef5",
+    "control.py": "142668f625ead132e4a322d81475ee88c614764d2939b63d439da057937d8168",
+    "dead_ball.py": "fa8a892fae4e1c100e37246804e7b836a639fbac1822fdf16e3fd44d7ab87b4c",
+    "temporal.py": "ad4ee43e3ac2c55fe8893a0502392042bb44dae95785fceb3b36166c1b1e70a8",
+    "pipeline.py": "41be7809653cfc3ab46a9b734c24d4bf9d2867923b50b7df7e27518d84d868f1"
+  },
+  "pipeline_defaults": {
+    "n_frames": 1,
+    "periods": [],
+    "fps": null,
+    "pitch_m": null,
+    "gap_policy": "error",
+    "evidence_chunk_size": 4096,
+    "control": {
+      "radius_m": 2,
+      "relative_speed_scale_mps": 5,
+      "unknown_motion_weight": 1,
+      "max_players_per_team": 3,
+      "ambiguity_margin": 0.2,
+      "use_player_motion": false
+    },
+    "dead_ball": {
+      "boundary_buffer_m": 0.5,
+      "slow_speed_mps": 0.5,
+      "moving_speed_mps": 1.5,
+      "outside_weight": 0.9,
+      "moving_weight": 0.65,
+      "live_tag_weight": 0.45,
+      "preparation_weight": 0.45,
+      "restart_weight": 0.75
+    },
+    "temporal": {
+      "mode": "causal",
+      "team_threshold": 0.3,
+      "team_hold_threshold": 0.15,
+      "control_conflict_threshold": 0.5,
+      "live_threshold": 0.4,
+      "dead_threshold": 0.4,
+      "phase_conflict_threshold": 0.4,
+      "restart_live_threshold": 0.6,
+      "tag_threshold": 0.5,
+      "acquisition_s": 0.12,
+      "turnover_s": 0.2,
+      "phase_confirmation_s": 0.2,
+      "team_hold_s": 2,
+      "dead_hold_s": 2,
+      "gap_reset_s": 2
+    }
+  },
+  "official_scorer_sha256": "341bad48904b489d6e875397b27687f5d6a4d22a397f3dc8af3a00d48f16874d",
+  "official_commit": "f8f2629ff1e0985f81d7e59d8413678514ee1530",
+  "official_scorer_url": "https://github.com/metrica-sports/more-than-a-hack-2027/blob/f8f2629ff1e0985f81d7e59d8413678514ee1530/evaluation/possession_metrics.py",
+  "official_license": "MIT; copyright 2026–2027 Metrica Sports",
+  "nearest_baseline_url": "https://github.com/metrica-sports/more-than-a-hack-2027/blob/f8f2629ff1e0985f81d7e59d8413678514ee1530/starter/baseline.py",
+  "smoothing_half_width_frames": 50,
+  "mode": "causal",
+  "smart_tags": false,
+  "bootstrap_n": 0,
+  "turnover_tolerances_frames": [
+    12,
+    25
+  ],
+  "reference_coverage_gate": {
+    "minimum_valid_fraction_per_half": 0.95,
+    "require_H_A_D_each_half": true
+  },
+  "coverage_gate_rationale": "Predeclared completeness QA gate, not an accuracy target; failures require a provider-data review, never imputing labels. X remains excluded by unchanged scorer.",
+  "aggregation": "each half scored unchanged; per-match and dataset spellF1/macroF1 are equal-half means; supplementary pooled confusion and summed counts",
+  "split_manifest_sha256": "8516c120f7e2e521d5e0b3734bf20a98c605a723e5ee0fa342b318b833351990"
+}

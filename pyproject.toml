@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "footballhack"
+version = "0.1.0"
+description = "Synthetic-first football possession prediction pipeline"
+requires-python = ">=3.11"
+dependencies = ["numpy==2.2.6"]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2"]
+external = ["pandas==2.3.3"]
+learned = ["scikit-learn==1.7.2", "scipy==1.18.1", "joblib==1.6.0", "threadpoolctl==3.8.0"]
+
+[project.scripts]
+footballhack = "footballhack.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"footballhack.external" = ["*.json", "_official/LICENSE"]
+"footballhack.v2" = ["frozen.json", "model.joblib"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

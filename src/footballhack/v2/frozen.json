@@ -1,0 +1,42 @@
+{
+  "model_sha256": "317061354ef151c1ed02ef49deb36e84098f55d9f9a55280013ee820b0d38367",
+  "decoder": {
+    "turnover": 10.0,
+    "stop": 10.0,
+    "restart": 10.0
+  },
+  "classifier": "sklearn.ensemble.HistGradientBoostingClassifier",
+  "hgb": {
+    "max_iter": 300,
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 63,
+    "min_samples_leaf": 200,
+    "l2_regularization": 1.0,
+    "early_stopping": false,
+    "random_state": 2027
+  },
+  "train_matches": [
+    "J03WN1",
+    "J03WOY",
+    "J03WR9"
+  ],
+  "train_conditions": [
+    "clean",
+    "ball10_structured",
+    "ball20_structured",
+    "ball41_structured",
+    "ball41_uniform",
+    "ball41_harsh",
+    "ball60_harsh"
+  ],
+  "stride": 3,
+  "seed": 2027,
+  "feature_fill_max_frames": 50,
+  "versions": {
+    "scikit_learn": "1.7.2",
+    "numpy": "2.2.6",
+    "joblib": "1.6.0"
+  },
+  "dataset": "Sportec Open DFL Dataset v1, doi:10.6084/m9.figshare.28196177.v1 (CC BY 4.0)",
+  "inputs": "tactical ATD tracking only; no Smart Tagging, video, labels or competition-derived parameters"
+}
